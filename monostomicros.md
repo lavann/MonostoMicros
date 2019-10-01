@@ -1,27 +1,6 @@
-## Monoliths to Microservices using DDD
+# Monoliths to Microservices using DDD
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# The Journey
+## The Journey
   *"So, you want to build a three-masted schooner. Step One: before assembly, take inventory of all parts."  (Niles Crane – An Affair to Forgot 2.22)*
 
 A monolithic application is typically an application system in which all the relevant modules are packaged together as a single deployable unit of execution. These applications can be a Java Web Application (WAR) running on Tomcat or an ASP.Net MVC Application running on IIS, fig1.
@@ -131,5 +110,5 @@ As you continue to strangle the monolith, eventually there will come the point i
 
 Finally, when the application has been decomposed into constituent microservices, it then becomes possible to leverage modern orchestration toolssuch as [Azure Devops](https://azure.microsoft.com/en-gb/services/devops/) to manage the lifecycle in production. 
 
-These Microservices can be deployed into Azure and leverage [Azure App Services](https://azure.microsoft.com/en-gb/services/app-service/)
+These Microservices can be deployed into Azure and leverage [Azure App Services](https://azure.microsoft.com/en-gb/services/app-service/) for running these services in the cloud.
 
