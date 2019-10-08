@@ -23,7 +23,7 @@ However, this does not imply that all monolithic applications are bad. In early 
 
 There comes the point in the application’s lifecycle that it no longer provides the same benefits as before and so the application is entirely re-written from scratch or modernised and migrated to a new architectural style that can accommodate change, such as microservices.
 
-Migrating a monolith to a microservice, is, unfortunately, a non-trivial task. It requires significant time and investment to ensure that migration is successful and not fraught with failure and overruns. To ensure that any migration is successful, it is good to gain an understanding of microservices and the benefits (and challenges) they bring. The term microservices, or the concept, was first introduced by Dr Peter Rogers in 2005 on Cloud Computing, the term used, at the time was “Micro web services”. The term microservices appeared in 2011 as an architectural style that pioneers were experimenting at the time; one of the early and well-known pioneers is Netflix.
+Migrating a monolith to a microservice, is, unfortunately, a non-trivial task. It requires significant time and investment to ensure that migration is successful and not fraught with failure and overruns. To ensure that any migration is successful, it is good to gain an understanding of microservices and the benefits (and challenges) they bring. The term microservices, or the concept, was first introduced by Dr Peter Rogers in 2005 on Cloud Computing, the term used, at the time was  [“Micro web services” ](https://www.mdpi.com/2076-3417/8/8/1368). The term microservices appeared in 2011 as an architectural style that pioneers were experimenting at the time. The term was coined at an architectural conference near Venice in 2011; one of the early and well-known pioneers is Netflix.
 
 Unlike monoliths, microservices are typically decentralised loosely coupled units of execution; in other words, an application is composed of a series of microservices – fig 2. 
  
@@ -58,7 +58,7 @@ Given the high-level overview of both architectures. When a monolith reaches the
 
 This is one of the major factors that stop teams from modernisation due to the fear of impacting the legacy system.
 
-Any migration strategy should allow teams to incrementally refactor the application into smaller services, while still providing continuity of service to end users. The Strangler Pattern coined Martin Fowler defines such a strategy, which allows for a controlled decomposition of a monolith into a set of microservices, over a period, the microservices will cause the monolith to shrink in size and complexity, to the point it no longer exists.
+Any migration strategy should allow teams to incrementally refactor the application into smaller services, while still providing continuity of service to end users. [The Strangler Pattern ](https://martinfowler.com/bliki/StranglerFigApplication.html) defined by Martin Fowler defines such a strategy, which allows for a controlled decomposition of a monolith into a set of microservices, over a period, the microservices will cause the monolith to shrink in size and complexity, to the point it no longer exists.
 
 The following strategies can be then used to implement this
 - Stop adding functionality to the monolith
@@ -67,7 +67,7 @@ The following strategies can be then used to implement this
 
 To help facilitate this decomposition, a viable software development approach is to apply the principles of domain-driven design (DDD). 
 
-DDD is a software development approach, first introduced by Eric Evans in 2003. DD is an approach  where one must have a good understanding of the domain for which the application will be written. The necessary domain knowledge to create the application resides within the people who understand it – the domain experts. 
+Domain Driven Design (DDD) is a software development approach, [ first introduced by Eric Evans in 2003](http://domainlanguage.com/ddd/) . DDD is an approach  where one must have a good understanding of the domain for which the application will be written. The necessary domain knowledge to create the application resides within the people who understand it – the domain experts. 
 
 There are many terms that DDD use that help facilitate this, one such example is called “ubiquitous language.” It ensures that there is common vocabulary between all stakeholders. For example: When you use a pen, you know what it can and cannot do and know the boundaries that apply to it, you can ask different subject matter experts for a pen, and they will also understand what a pen is, without relying on you to interpret it for them.
 
@@ -82,17 +82,13 @@ While this investigate work is carried out to inventory the monolithic applicati
 
 ![Fig4 - Glue Code](fig4.jpg "Fig 1 Glue Code to allow a Monolith to interact with a new Service")
 
-The glue code effectively acts as an anti-corruption layer, to ensure that the new service is not polluted by data models required by the monolithic application; the glue code helps to mediate interactions between the two. 
+The  [glue code (adapter pattern)](https://en.wikipedia.org/wiki/Glue_code) effectively acts as an anti-corruption layer, to ensure that the new service is not polluted by data models required by the monolithic application; the glue code helps to mediate interactions between the two and ensures that only data that is required by the new service is passed to enable compatability between the services. 
 
 Through the process of refactoring, teams can inventory the monolithic application and identify candidates for microservices refactoring while also establishing new functionality with new services.
 
 The next step in the process of refactoring the monolithic is to separate the presentation layer from the back-end layer. In a traditional n-tier application, the application (business) layer tend to be the components that are core to the application and have domain logic within them. These coarse-grained APIs interact with the data access layer to retrieve persisted data from within a database. These APIs establish a natural boundary to the presentation tier and helps facilitate decoupling of the presentation tier into a separate application space fig 5.
 
 ![Fig5 - Monolith](fig1.jpg "Fig 1 A Typical Monolith Architecture")
-
-
-
-
 
 
 
@@ -106,9 +102,9 @@ At this stage, the team can begin “peeling away” the monolithic application 
 
 ![Fig6 - API Layer](fig6.jpg "Fig 6 API Layer to peel away microservices")
 
-As you continue to strangle the monolith, eventually there will come the point in which it no longer needs to exist, the microservices have been successfully extracted from the monolith. At this point, the mediation, or anti-corruption layer can be safely removed fig 7. 
+As you continue to peel away the monolith, eventually there will come the point in which it no longer needs to exist, the microservices have been successfully extracted from the monolith. At this point, the mediation, or anti-corruption layer can be safely removed fig 7. 
 
-Finally, when the application has been decomposed into constituent microservices, it then becomes possible to leverage modern orchestration toolssuch as [Azure Devops](https://azure.microsoft.com/en-gb/services/devops/) to manage the lifecycle in production. 
+Finally, when the application has been decomposed into constituent microservices, it then becomes possible to leverage modern orchestration toolssuch as [Azure Devops](https://azure.microsoft.com/en-gb/services/devops/) to manage the lifecycle in of the application from development through to production. 
 
-These Microservices can be deployed into Azure and leverage [Azure App Services](https://azure.microsoft.com/en-gb/services/app-service/) for running these services in the cloud.
+These Microservices can be deployed into Azure and leverage [Azure App Services](https://azure.microsoft.com/en-gb/services/app-service/) for running these services in the cloud coupled At [PI Managemen](https://azure.microsoft.com/en-gb/services/api-management/) acting as the facade to allow for [fine grained control of each of the services](https://azure.microsoft.com/en-us/blog/benefits-of-using-azure-api-management-with-microservices/ ).
 
