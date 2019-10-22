@@ -106,5 +106,5 @@ As you continue to peel away the monolith, eventually there will come the point 
 
 Finally, when the application has been decomposed into constituent microservices, it then becomes possible to leverage modern orchestration toolssuch as [Azure Devops](https://azure.microsoft.com/en-gb/services/devops/) to manage the lifecycle in of the application from development through to production. 
 
-These Microservices can be deployed into Azure and leverage [Azure App Services](https://azure.microsoft.com/en-gb/services/app-service/) for running these services in the cloud coupled At [PI Managemen](https://azure.microsoft.com/en-gb/services/api-management/) acting as the facade to allow for [fine grained control of each of the services](https://azure.microsoft.com/en-us/blog/benefits-of-using-azure-api-management-with-microservices/ ).
+These Microservices can be deployed into Azure and leverage [Azure App Services](https://azure.microsoft.com/en-gb/services/app-service/) for running these services in the cloud coupled with [API Managemen](https://azure.microsoft.com/en-gb/services/api-management/) acting as the facade to allow for [fine grained control of each of the services](https://azure.microsoft.com/en-us/blog/benefits-of-using-azure-api-management-with-microservices/ ).
 
